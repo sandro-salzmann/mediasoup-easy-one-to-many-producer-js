@@ -5,10 +5,14 @@ import { io } from 'socket.io-client';
 
 process.env.DEBUG = "mediasoup*"; // for testing purposes
 
-export const useProduce = () => {
+type ProduceOptions = {
+    url: string
+}
+
+export const useProduce = (options: ProduceOptions) => {
     let device: mediasoup.Device;
 
-    const socket = io("http://localhost:3014/mediasoup");
+    const socket = io(`${options.url}/mediasoup`);
 
     const connect = () => {
         socket.on("connect_error", (err) => {
