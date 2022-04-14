@@ -1,6 +1,5 @@
 import mediasoup, { Device } from "mediasoup-client";
 import { RtpCapabilities } from "mediasoup-client/lib/RtpParameters";
-import { Transport } from "mediasoup-client/lib/Transport";
 import { io } from 'socket.io-client';
 
 process.env.DEBUG = "mediasoup*"; // for testing purposes
