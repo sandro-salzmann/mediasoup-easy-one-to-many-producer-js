@@ -13,10 +13,10 @@ npm install mediasoup-easy-one-to-many-producer-js
 Call `useProduce` to setup a producer using your options. `useProduce` will return functions that let you establish the connection to the mediasoup router (`connect`) and start publishing a stream (`publish`).
 
 ```ts
-import { useProduce } from "mediasoup-easy-one-to-many-producer-react";
+import { useProduce } from "mediasoup-easy-one-to-many-producer-js";
 
 const { connect, publish } = useProduce({
-    url: "https://example.com:3014",
+    url: "http://localhost:8080",
 });
 
 // ...
@@ -37,3 +37,7 @@ Returns functions for connecting to the [server](https://github.com/sandro-salzm
 | Field & Type        | Description                                                                                                                        | Required | Default |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | url <br /> *string* | URL of the [server](https://github.com/sandro-salzmann/mediasoup-easy-one-to-many-server) where the mediasoup router is running on | Yes      |         |
+
+## Known bugs
+
+- (Sometimes) doesn't work in react inside of `<React.StrictMode>`
